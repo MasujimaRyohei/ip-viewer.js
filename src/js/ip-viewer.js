@@ -1,8 +1,13 @@
-const script = document.createElement('script');
+var scriptNode = document.createElement('script');
 
-script.src = 'https://ipinfo.io?callback=getJson';
-document.body.appendChild(script);
-document.body.removeChild(script);
+scriptNode.src = 'https://ipinfo.io?callback=getJson';
+document.body.appendChild(scriptNode);
+document.body.removeChild(scriptNode);
+
+var buttonNode = document.createElement('button');
+buttonNode.setAttribute('onclick', 'location.reload()');
+buttonNode.innerHTML = "RELOAD";
+document.body.appendChild(buttonNode);
 
 function getJson(data) {
     var ipNode = document.createElement('h2');
